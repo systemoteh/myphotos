@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>ru.systemoteh</groupId>
+  <artifactId>photos</artifactId>
+  <version>1.0</version>
+  <packaging>pom</packaging>
+  <name>photos</name>
+  <modules>
+    <module>photos-model</module>
+    <module>photos-common</module>
+    <module>photos-ejb</module>
+    <module>photos-web</module>
+    <module>photos-rest</module>
+    <module>photos-ws</module>
+    <module>photos-ear</module>
+  </modules>
+</project>
