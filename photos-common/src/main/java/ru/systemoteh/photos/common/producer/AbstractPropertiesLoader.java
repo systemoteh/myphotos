@@ -2,6 +2,7 @@ package ru.systemoteh.photos.common.producer;
 
 import ru.systemoteh.photos.common.resource.ResourceLoaderManager;
 
+import javax.enterprise.inject.Vetoed;
 import javax.inject.Inject;
 import java.io.IOException;
 import java.io.InputStream;
@@ -9,6 +10,7 @@ import java.util.Properties;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
+@Vetoed
 abstract class AbstractPropertiesLoader {
 
     @Inject

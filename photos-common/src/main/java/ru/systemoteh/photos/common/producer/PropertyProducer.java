@@ -3,10 +3,12 @@ package ru.systemoteh.photos.common.producer;
 import ru.systemoteh.photos.common.annotation.cdi.Property;
 import ru.systemoteh.photos.exception.ConfigException;
 
+import javax.enterprise.context.Dependent;
 import javax.enterprise.inject.Produces;
 import javax.enterprise.inject.spi.InjectionPoint;
 import javax.inject.Inject;
 
+@Dependent
 public class PropertyProducer {
 
     @Inject
