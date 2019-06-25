@@ -29,7 +29,7 @@ COMMENT ON EXTENSION plpgsql IS 'PL/pgSQL procedural language';
 
 
 --
--- Name: update_rating(); Type: FUNCTION; Schema: public; Owner: myphotos
+-- Name: update_rating(); Type: FUNCTION; Schema: public; Owner: photos
 --
 
 CREATE FUNCTION public.update_rating() RETURNS void
@@ -52,14 +52,14 @@ END;
 $$;
 
 
-ALTER FUNCTION public.update_rating() OWNER TO myphotos;
+ALTER FUNCTION public.update_rating() OWNER TO photos;
 
 SET default_tablespace = '';
 
 SET default_with_oids = false;
 
 --
--- Name: access_token; Type: TABLE; Schema: public; Owner: myphotos
+-- Name: access_token; Type: TABLE; Schema: public; Owner: photos
 --
 
 CREATE TABLE public.access_token
@@ -71,10 +71,10 @@ CREATE TABLE public.access_token
 
 
 ALTER TABLE public.access_token
-  OWNER TO myphotos;
+  OWNER TO photos;
 
 --
--- Name: photo; Type: TABLE; Schema: public; Owner: myphotos
+-- Name: photo; Type: TABLE; Schema: public; Owner: photos
 --
 
 CREATE TABLE public.photo
@@ -91,10 +91,10 @@ CREATE TABLE public.photo
 
 
 ALTER TABLE public.photo
-  OWNER TO myphotos;
+  OWNER TO photos;
 
 --
--- Name: photo_seq; Type: SEQUENCE; Schema: public; Owner: myphotos
+-- Name: photo_seq; Type: SEQUENCE; Schema: public; Owner: photos
 --
 
 CREATE SEQUENCE public.photo_seq
@@ -106,10 +106,10 @@ CREATE SEQUENCE public.photo_seq
 
 
 ALTER TABLE public.photo_seq
-  OWNER TO myphotos;
+  OWNER TO photos;
 
 --
--- Name: profile; Type: TABLE; Schema: public; Owner: myphotos
+-- Name: profile; Type: TABLE; Schema: public; Owner: photos
 --
 
 CREATE TABLE public.profile
@@ -129,10 +129,10 @@ CREATE TABLE public.profile
 
 
 ALTER TABLE public.profile
-  OWNER TO myphotos;
+  OWNER TO photos;
 
 --
--- Name: profile_seq; Type: SEQUENCE; Schema: public; Owner: myphotos
+-- Name: profile_seq; Type: SEQUENCE; Schema: public; Owner: photos
 --
 
 CREATE SEQUENCE public.profile_seq
@@ -144,32 +144,32 @@ CREATE SEQUENCE public.profile_seq
 
 
 ALTER TABLE public.profile_seq
-  OWNER TO myphotos;
+  OWNER TO photos;
 
 --
--- Data for Name: access_token; Type: TABLE DATA; Schema: public; Owner: myphotos
---
-
-
---
--- Data for Name: photo; Type: TABLE DATA; Schema: public; Owner: myphotos
+-- Data for Name: access_token; Type: TABLE DATA; Schema: public; Owner: photos
 --
 
 
 --
--- Name: photo_seq; Type: SEQUENCE SET; Schema: public; Owner: myphotos
+-- Data for Name: photo; Type: TABLE DATA; Schema: public; Owner: photos
+--
+
+
+--
+-- Name: photo_seq; Type: SEQUENCE SET; Schema: public; Owner: photos
 --
 
 SELECT pg_catalog.setval('public.photo_seq', 1, false);
 
 
 --
--- Data for Name: profile; Type: TABLE DATA; Schema: public; Owner: myphotos
+-- Data for Name: profile; Type: TABLE DATA; Schema: public; Owner: photos
 --
 
 
 --
--- Name: profile_seq; Type: SEQUENCE SET; Schema: public; Owner: myphotos
+-- Name: profile_seq; Type: SEQUENCE SET; Schema: public; Owner: photos
 --
 
 SELECT pg_catalog.setval('public.profile_seq', 1, false);
