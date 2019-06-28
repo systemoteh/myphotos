@@ -84,4 +84,9 @@ public class Profile extends AbstractDomain {
     @Basic(optional = false)
     @Column(nullable = false)
     private int rating;
+
+    @Transient
+    public String getFullName(){
+        return String.format("%s %s", getFirstName(), getLastName());
+    }
 }

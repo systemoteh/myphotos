@@ -14,7 +14,7 @@ public class ProfileRepositoryInvocationHandler implements InvocationHandler {
     public Object invoke(Object proxy, Method method, Object[] args) throws Throwable {
         if("findByUid".equals(method.getName())) {
             String uid = String.valueOf(args[0]);
-            if("richard-hendricks".equals(uid)) {
+            if("petr-first".equals(uid)) {
                 return Optional.of(PROFILE);
             } else {
                 return Optional.empty();
