@@ -1,7 +1,8 @@
-package ru.systemoteh.ejb.service.bean;
+package ru.systemoteh.photos.ejb.service.bean;
 
-import ru.systemoteh.ejb.repository.PhotoRepository;
-import ru.systemoteh.ejb.repository.ProfileRepository;
+import ru.systemoteh.photos.common.annotation.cdi.Factory;
+import ru.systemoteh.photos.ejb.repository.PhotoRepository;
+import ru.systemoteh.photos.ejb.repository.ProfileRepository;
 import ru.systemoteh.photos.exception.ObjectNotFoundException;
 import ru.systemoteh.photos.exception.ValidationException;
 import ru.systemoteh.photos.model.*;
@@ -23,6 +24,7 @@ import static java.lang.String.format;
 public class PhotoServiceBean implements PhotoService {
 
     @Inject
+    @Factory
     private PhotoRepository photoRepository;
 
     @Inject

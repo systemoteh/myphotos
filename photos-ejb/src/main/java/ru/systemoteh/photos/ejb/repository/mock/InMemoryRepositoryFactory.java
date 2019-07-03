@@ -1,8 +1,9 @@
-package ru.systemoteh.ejb.repository.mock;
+package ru.systemoteh.photos.ejb.repository.mock;
 
-import ru.systemoteh.ejb.repository.AccessTokenRepository;
-import ru.systemoteh.ejb.repository.PhotoRepository;
-import ru.systemoteh.ejb.repository.ProfileRepository;
+import ru.systemoteh.photos.common.annotation.cdi.Factory;
+import ru.systemoteh.photos.ejb.repository.AccessTokenRepository;
+import ru.systemoteh.photos.ejb.repository.PhotoRepository;
+import ru.systemoteh.photos.ejb.repository.ProfileRepository;
 
 import javax.enterprise.context.Dependent;
 import javax.enterprise.inject.Produces;
@@ -19,19 +20,19 @@ public class InMemoryRepositoryFactory {
     @Inject
     private PhotoRepositoryInvocationHandler photoRepositoryInvocationHandler;
 
-    @Produces
+    @Produces @Factory
     public ProfileRepository getProfileRepository() {
         return (ProfileRepository) Proxy.newProxyInstance(getClass().getClassLoader(),
                 new Class[]{ProfileRepository.class}, profileRepositoryInvocationHandler);
     }
 
-    @Produces
+    @Produces @Factory
     public PhotoRepository getPhotoRepository() {
         return (PhotoRepository) Proxy.newProxyInstance(getClass().getClassLoader(),
                 new Class[]{PhotoRepository.class}, photoRepositoryInvocationHandler);
     }
 
-    @Produces
+    @Produces @Factory
     public AccessTokenRepository getAccessTokenRepository() {
         return (AccessTokenRepository) Proxy.newProxyInstance(getClass().getClassLoader(),
                 new Class[]{AccessTokenRepository.class}, (Object proxy, Method method, Object[] args) -> {

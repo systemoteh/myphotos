@@ -1,4 +1,4 @@
-package ru.systemoteh.ejb.repository.mock;
+package ru.systemoteh.photos.ejb.repository.mock;
 
 import ru.systemoteh.photos.model.domain.Photo;
 import ru.systemoteh.photos.model.domain.Profile;

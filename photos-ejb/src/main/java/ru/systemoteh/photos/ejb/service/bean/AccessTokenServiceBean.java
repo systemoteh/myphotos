@@ -1,6 +1,6 @@
-package ru.systemoteh.ejb.service.bean;
+package ru.systemoteh.photos.ejb.service.bean;
 
-import ru.systemoteh.ejb.repository.AccessTokenRepository;
+import ru.systemoteh.photos.ejb.repository.AccessTokenRepository;
 import ru.systemoteh.photos.exception.AccessForbiddenException;
 import ru.systemoteh.photos.exception.InvalidAccessTokenException;
 import ru.systemoteh.photos.model.domain.AccessToken;

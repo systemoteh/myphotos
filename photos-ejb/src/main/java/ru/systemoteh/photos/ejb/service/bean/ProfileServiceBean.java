@@ -1,6 +1,7 @@
-package ru.systemoteh.ejb.service.bean;
+package ru.systemoteh.photos.ejb.service.bean;
 
-import ru.systemoteh.ejb.repository.ProfileRepository;
+import ru.systemoteh.photos.common.annotation.cdi.Factory;
+import ru.systemoteh.photos.ejb.repository.ProfileRepository;
 import ru.systemoteh.photos.common.annotation.cdi.Property;
 import ru.systemoteh.photos.exception.ObjectNotFoundException;
 import ru.systemoteh.photos.model.AsyncOperation;
@@ -22,6 +23,7 @@ public class ProfileServiceBean implements ProfileService {
     private String avatarPlaceHolderUrl;
 
     @Inject
+    @Factory
     private ProfileRepository profileRepository;
 
     @Override

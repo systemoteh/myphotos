@@ -1,4 +1,4 @@
-package ru.systemoteh.ejb.repository;
+package ru.systemoteh.photos.ejb.repository;
 
 import java.util.Optional;
 

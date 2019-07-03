@@ -1,11 +1,9 @@
-package ru.systemoteh.ejb.repository.mock;
+package ru.systemoteh.photos.ejb.repository.mock;
 
 import javax.enterprise.context.ApplicationScoped;
 import java.lang.reflect.InvocationHandler;
 import java.lang.reflect.Method;
 import java.util.Optional;
-
-import static ru.systemoteh.ejb.repository.mock.InMemoryDataBase.PROFILE;
 
 @ApplicationScoped
 public class ProfileRepositoryInvocationHandler implements InvocationHandler {
@@ -15,7 +13,7 @@ public class ProfileRepositoryInvocationHandler implements InvocationHandler {
         if("findByUid".equals(method.getName())) {
             String uid = String.valueOf(args[0]);
             if("petr-first".equals(uid)) {
-                return Optional.of(PROFILE);
+                return Optional.of(InMemoryDataBase.PROFILE);
             } else {
                 return Optional.empty();
             }

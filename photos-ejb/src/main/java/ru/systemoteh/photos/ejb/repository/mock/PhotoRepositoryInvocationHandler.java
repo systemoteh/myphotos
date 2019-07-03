@@ -1,4 +1,4 @@
-package ru.systemoteh.ejb.repository.mock;
+package ru.systemoteh.photos.ejb.repository.mock;
 
 import javax.enterprise.context.ApplicationScoped;
 import java.lang.reflect.InvocationHandler;
@@ -6,8 +6,8 @@ import java.lang.reflect.Method;
 import java.util.Collections;
 import java.util.stream.Collectors;
 
-import static ru.systemoteh.ejb.repository.mock.InMemoryDataBase.PHOTOS;
-import static ru.systemoteh.ejb.repository.mock.InMemoryDataBase.PROFILE;
+import static ru.systemoteh.photos.ejb.repository.mock.InMemoryDataBase.PHOTOS;
+import static ru.systemoteh.photos.ejb.repository.mock.InMemoryDataBase.PROFILE;
 
 @ApplicationScoped
 public class PhotoRepositoryInvocationHandler implements InvocationHandler {
