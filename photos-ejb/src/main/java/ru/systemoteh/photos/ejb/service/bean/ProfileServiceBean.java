@@ -23,7 +23,7 @@ public class ProfileServiceBean implements ProfileService {
     private String avatarPlaceHolderUrl;
 
     @Inject
-    @Factory
+//    @Factory    // for mock data
     private ProfileRepository profileRepository;
 
     @Override

@@ -24,7 +24,7 @@ import static java.lang.String.format;
 public class PhotoServiceBean implements PhotoService {
 
     @Inject
-    @Factory
+//    @Factory    // for mock data
     private PhotoRepository photoRepository;
 
     @Inject
