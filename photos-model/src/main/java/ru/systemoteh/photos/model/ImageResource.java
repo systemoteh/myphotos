@@ -1,6 +1,6 @@
 package ru.systemoteh.photos.model;
 
-import javax.validation.Path;
+import java.nio.file.Path;
 
 public interface ImageResource extends AutoCloseable {
 

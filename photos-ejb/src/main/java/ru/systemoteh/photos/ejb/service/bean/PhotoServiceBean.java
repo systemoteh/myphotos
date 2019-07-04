@@ -1,8 +1,9 @@
 package ru.systemoteh.photos.ejb.service.bean;
 
-import ru.systemoteh.photos.common.annotation.cdi.Factory;
 import ru.systemoteh.photos.ejb.repository.PhotoRepository;
 import ru.systemoteh.photos.ejb.repository.ProfileRepository;
+import ru.systemoteh.photos.ejb.service.ImageStorageService;
+import ru.systemoteh.photos.ejb.service.interceptor.AsyncOperationInterceptor;
 import ru.systemoteh.photos.exception.ObjectNotFoundException;
 import ru.systemoteh.photos.exception.ValidationException;
 import ru.systemoteh.photos.model.*;
@@ -13,6 +14,7 @@ import ru.systemoteh.photos.service.PhotoService;
 import javax.annotation.Resource;
 import javax.ejb.*;
 import javax.inject.Inject;
+import javax.interceptor.Interceptors;
 import java.util.List;
 import java.util.Optional;
 
@@ -29,6 +31,12 @@ public class PhotoServiceBean implements PhotoService {
 
     @Inject
     private ProfileRepository profileRepository;
+
+    @Inject
+    private ImageStorageService imageStorageService;
+
+    @EJB
+    private ImageProcessorBean imageProcessorBean;
 
     @Resource
     private SessionContext sessionContext;
@@ -77,15 +85,16 @@ public class PhotoServiceBean implements PhotoService {
         photo.setDownloads(photo.getDownloads() + 1);
         photoRepository.update(photo);
 
-        throw new UnsupportedOperationException("Not implemented yet");
+        return imageStorageService.getOriginalImage(photo.getOriginalUrl());
     }
 
     @Override
     @Asynchronous
+    @Interceptors(AsyncOperationInterceptor.class)
     @TransactionAttribute(TransactionAttributeType.REQUIRES_NEW)
     public void uploadNewPhoto(Profile currentProfile, ImageResource imageResource, AsyncOperation<Photo> asyncOperation) {
         try {
-            Photo photo = null; //FIXME
+            Photo photo = uploadNewPhoto(currentProfile, imageResource);
             asyncOperation.onSuccess(photo);
         } catch (Throwable throwable) {
             sessionContext.setRollbackOnly();
@@ -93,4 +102,13 @@ public class PhotoServiceBean implements PhotoService {
         }
     }
 
+    public Photo uploadNewPhoto(Profile currentProfile, ImageResource imageResource) {
+        Photo photo = imageProcessorBean.processPhoto(imageResource);
+        photo.setProfile(currentProfile);
+        photoRepository.create(photo);
+        photoRepository.flush();
+        currentProfile.setPhotoCount(photoRepository.countProfilePhotos(currentProfile.getId()));
+        profileRepository.update(currentProfile);
+        return photo;
+    }
 }
