@@ -14,5 +14,6 @@
     <module>photos-rest</module>
     <module>photos-ws</module>
     <module>photos-ear</module>
+      <module>photos-generator</module>
   </modules>
 </project>
