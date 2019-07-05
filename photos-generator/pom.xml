@@ -38,6 +38,22 @@
             <artifactId>tomee-embedded</artifactId>
             <version>7.0.3</version>
         </dependency>
+        <dependency>
+            <groupId>ru.systemoteh</groupId>
+            <artifactId>photos-model</artifactId>
+            <version>1.0</version>
+        </dependency>
+
+        <dependency>
+            <groupId>ru.systemoteh</groupId>
+            <artifactId>photos-common</artifactId>
+            <version>1.0</version>
+        </dependency>
+        <dependency>
+            <groupId>ru.systemoteh</groupId>
+            <artifactId>photos-ejb</artifactId>
+            <version>1.0</version>
+        </dependency>
     </dependencies>
 
     <build>
