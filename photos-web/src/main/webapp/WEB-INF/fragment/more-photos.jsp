@@ -7,14 +7,14 @@
     <c:set var="classes" value="${status.index % 2 != (firstExist ? 1 : 0) ? '6u$ 12u$(xsmall)' : '6u 12u$(xsmall)' }"/>
     <article class="${classes} photo-item not-init">
         <figure>
-            <a href="${photo.largeUrl}" class="image fit thumb">
+            <a href="/preview/${photo.id}.jpg" class="image fit thumb">
                 <img src="${photo.smallUrl}" alt="Photo"/>
             </a>
             <figcaption>
                 <p class="author">
                     <c:choose>
                         <c:when test="${profilePhotos}">
-                            <span class="uploaded-date"><i class="fa fa-calendar" aria-hidden="true"></i> Uploaded: 
+                            <span class="uploaded-date"><i class="fa fa-calendar" aria-hidden="true"></i> Uploaded:
                                 <fmt:formatDate value="${photo.created}" type="DATE" dateStyle="SHORT"/>
                             </span>
                         </c:when>
@@ -32,7 +32,7 @@
                     <span><i class="fa fa-download" aria-hidden="true"></i> ${photo.downloads} <span class="txt">Downloads</span></span>
                 </p>
                 <p class="actions">
-                    <a class="button special small fit" href="#">Download</a>
+                    <a class="button special small fit" href="/download/${photo.id}.jpg">Download</a>
                 </p>
             </figcaption>
         </figure>

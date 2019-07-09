@@ -30,7 +30,7 @@ $(function () {
     function initSortModeSelector() {
         $('#sort-mode-selector').on('change', function () {
             var option = this.value;
-            window.location = 'home.html?sort=' + option;
+            window.location = '/?sort=' + option;
         });
     }
 
@@ -126,6 +126,7 @@ $(function () {
             });
         });
     }
+
     //https://tellibus.com/fineuploader/fine-uploader-basic-demo.html
     function initAvatarUploader() {
         var avatarUploader = $('#avatar-uploader');
@@ -204,30 +205,30 @@ $(function () {
         $('#current-photo .downloads').after(result.downloads);
         $('#current-photo .downloads').remove();
         $('#current-photo').removeAttr('id');
-        
+
         var photoLimit = parseInt($('#photo-container').attr('data-photo-limit'));
         var realItems = $('#photo-container .photo-item').length;
         var toRemoveCount = realItems - photoLimit;
-        while(toRemoveCount > 0) {
+        while (toRemoveCount > 0) {
             $('#photo-container .photo-item:last').remove();
             toRemoveCount--;
         }
-		recreateAdaptiveClasses();
+        recreateAdaptiveClasses();
         initPoptrox();
     }
-	
-	function recreateAdaptiveClasses(){
-		var i;
-		var photoItems = $('#photo-container .photo-item');
-		for(i = 0; i < photoItems.length; i++) {
-			var item = $(photoItems[i]);
-			item.removeClass('6u');
-			item.removeClass('6u$');
-			if(i % 2 == 0) {
-				item.addClass('6u');
-			} else {
-				item.addClass('6u$');
-			}
-		}
-	}
+
+    function recreateAdaptiveClasses() {
+        var i;
+        var photoItems = $('#photo-container .photo-item');
+        for (i = 0; i < photoItems.length; i++) {
+            var item = $(photoItems[i]);
+            item.removeClass('6u');
+            item.removeClass('6u$');
+            if (i % 2 == 0) {
+                item.addClass('6u');
+            } else {
+                item.addClass('6u$');
+            }
+        }
+    }
 });
