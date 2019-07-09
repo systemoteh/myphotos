@@ -21,7 +21,7 @@ public class ProfileGenerator{
     private final Random random = new Random();
 
     public List<Profile> generateProfiles() {
-        File file = new File("external/test-data/profiles.xml");
+        File file = new File("external/generate-data/profiles.xml");
         try {
             JAXBContext jaxbContext = JAXBContext.newInstance(Profiles.class);
             Unmarshaller jaxbUnmarshaller = jaxbContext.createUnmarshaller();

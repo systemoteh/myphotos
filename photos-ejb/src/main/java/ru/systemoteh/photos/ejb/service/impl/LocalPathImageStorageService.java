@@ -39,7 +39,7 @@ public class LocalPathImageStorageService implements ImageStorageService {
     @Override
     public String saveProtectedImage(Path path) {
         String fileName = fileNameGeneratorService.generateUniqueFileName();
-        Path destinationPath = Paths.get(storageRoot + fileName);
+        Path destinationPath = Paths.get(storageRoot, fileName);
         saveImage(path, destinationPath);
         return fileName;
     }
@@ -62,7 +62,7 @@ public class LocalPathImageStorageService implements ImageStorageService {
             logger.log(Level.WARNING, String.format("Move failed from %s to %s. Try to copy...", sourcePath, destinationPath), ex);
             try {
                 Files.copy(sourcePath, destinationPath, REPLACE_EXISTING);
-            } catch(IOException e) {
+            } catch (IOException e) {
                 ApplicationException applicationException = new ApplicationException("Can't save image: " + destinationPath, e);
                 applicationException.addSuppressed(ex);
                 throw applicationException;
@@ -77,7 +77,7 @@ public class LocalPathImageStorageService implements ImageStorageService {
         try {
             Files.deleteIfExists(destinationPath);
         } catch (IOException | RuntimeException e) {
-            logger.log(Level.SEVERE, "Delete public image failed: "+destinationPath, e);
+            logger.log(Level.SEVERE, "Delete public image failed: " + destinationPath, e);
         }
     }
 

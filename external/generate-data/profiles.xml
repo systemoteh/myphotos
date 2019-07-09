@@ -2,42 +2,42 @@
     <profile>
         <firstName>Adrian</firstName>
         <lastName>Edwards</lastName>
-        <avatarUrl>external/test-data/avatar/Adrian Edwards.jpg</avatarUrl>
+        <avatarUrl>external/generate-data/avatar/Adrian Edwards.jpg</avatarUrl>
         <jobTitle>CEO of IT Land</jobTitle>
         <location>Moscow, Russia</location>
     </profile>
     <profile>
         <firstName>Alexander</firstName>
         <lastName>Henderson</lastName>
-        <avatarUrl>external/test-data/avatar/Alexander Henderson.jpg</avatarUrl>
+        <avatarUrl>external/generate-data/avatar/Alexander Henderson.jpg</avatarUrl>
         <jobTitle>Head of Business Development</jobTitle>
         <location>Moscow, Russia</location>
     </profile>
     <profile>
         <firstName>Gabrielle</firstName>
         <lastName>Bennett</lastName>
-        <avatarUrl>external/test-data/avatar/Gabrielle Bennett.jpg</avatarUrl>
+        <avatarUrl>external/generate-data/avatar/Gabrielle Bennett.jpg</avatarUrl>
         <jobTitle>Senior Programmer</jobTitle>
         <location>Moscow, Russia</location>
     </profile>
     <profile>
         <firstName>Joseph</firstName>
         <lastName>Hayes</lastName>
-        <avatarUrl>external/test-data/avatar/Joseph Hayes.jpg</avatarUrl>
+        <avatarUrl>external/generate-data/avatar/Joseph Hayes.jpg</avatarUrl>
         <jobTitle>Majority Investor</jobTitle>
         <location>Moscow, Russia</location>
     </profile>
     <profile>
         <firstName>Kaylee</firstName>
         <lastName>Davis</lastName>
-        <avatarUrl>external/test-data/avatar/Kaylee Davis.jpg</avatarUrl>
+        <avatarUrl>external/generate-data/avatar/Kaylee Davis.jpg</avatarUrl>
         <jobTitle>Senior Systems Architect</jobTitle>
         <location>Moscow, Russia</location>
     </profile>
     <profile>
         <firstName>Luke</firstName>
         <lastName>Simmons</lastName>
-        <avatarUrl>external/test-data/avatar/Luke Simmons.jpg</avatarUrl>
+        <avatarUrl>external/generate-data/avatar/Luke Simmons.jpg</avatarUrl>
         <jobTitle>Fullstack Developer</jobTitle>
         <location>Moscow, Russia</location>
     </profile>

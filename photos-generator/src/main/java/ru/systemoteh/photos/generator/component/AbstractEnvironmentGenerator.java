@@ -55,7 +55,7 @@ public abstract class AbstractEnvironmentGenerator {
         for (String module : modules) {
             files.add(new File(resolveModule(module)));
         }
-        files.add(new File("target/classes"));
+        files.add(new File("photos-generator/target/classes"));
         return files.toArray(new File[files.size()]);
     }
 
