@@ -1,0 +1,7 @@
+# for Linux -       /etc/hosts
+# for Windows -     C:\Windows\System32\drivers\etc\hosts
+
+127.0.0.1	localhost
+127.0.0.1   photos.ru
+127.0.0.1   soap.photos.ru
+127.0.0.1   api.photos.ru

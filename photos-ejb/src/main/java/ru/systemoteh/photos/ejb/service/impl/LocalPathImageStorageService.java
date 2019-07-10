@@ -83,7 +83,7 @@ public class LocalPathImageStorageService implements ImageStorageService {
 
     @Override
     public OriginalImage getOriginalImage(String originalUrl) {
-        Path originalPath = Paths.get(storageRoot + originalUrl);
+        Path originalPath = Paths.get(storageRoot, originalUrl);
         try {
             return new OriginalImage(
                     Files.newInputStream(originalPath),
